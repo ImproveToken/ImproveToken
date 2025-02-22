@@ -15,16 +15,25 @@
             gap: 10px;
         }
         .btn {
-            background: rgba(0, 0, 0, 0.5);
+            background-size: cover;
+            background-position: center;
+            justify-content: center ;
+            width: 200px;
+            height: 100px;
+            filter: grayscale(1);
             color: white;
-            border: none;
+            border: black;
             padding: 10px 15px;
             cursor: pointer;
             border-radius: 5px;
             font-size: 16px;
+            transition: 1s;
+            transform: scale(1);
         }
         .btn:hover {
-            background: rgba(0, 0, 0, 0.7);
+            filter: grayscale(0);
+            transform: scale(1.2);
+            margin: 0px 10px 0px 10px;
         }
     </style>
 </head>
@@ -39,9 +48,24 @@
     
     <!-- Кнопки переключения панорам -->
     <div class="button-container">
-        <button class="btn" onclick="changePanorama('panorama.png')">Панорама 1</button>
-        <button class="btn" onclick="changePanorama('panorama.png')">Панорама 2</button>
-        <button class="btn" onclick="changePanorama('panorama.png')">Панорама 3</button>
+        <button style="background-image: url(panorama.png);" class="btn" onclick="changePanorama('panorama.png')">Панорама 1</button>
+        <button style="background-image: url(panorama.png);" class="btn" onclick="changePanorama('panorama.png')">Панорама 2</button>
+        <button style="background-image: url(panorama.png);" class="btn" onclick="changePanorama('panorama.png')">Панорама 3</button>
+        <button style="background-image: url(panorama.png);" class="btn" onclick="changePanorama('panorama.png')">Панорама 14</button>
+        <button style="background-image: url(panorama.png);" class="btn" onclick="changePanorama('panorama.png')">Панорама 21</button>
+        <button style="background-image: url(panorama.png);" class="btn" onclick="changePanorama('panorama.png')">Панорама 34</button>
+        <button style="background-image: url(panorama.png);" class="btn" onclick="changePanorama('panorama.png')">Панорама 21</button>
+        <button style="background-image: url(panorama.png);" class="btn" onclick="changePanorama('panorama.png')">Панорама 32</button>
+        <button style="background-image: url(panorama.png);" class="btn" onclick="changePanorama('panorama.png')">Панорама 1</button>
+        <button style="background-image: url(panorama.png);" class="btn" onclick="changePanorama('panorama.png')">Панорама 2</button>
+        <button style="background-image: url(panorama.png);" class="btn" onclick="changePanorama('panorama.png')">Панорама 3</button>
+        <button style="background-image: url(panorama.png);" class="btn" onclick="changePanorama('panorama.png')">Панорама 14</button>
+        <button style="background-image: url(panorama.png);" class="btn" onclick="changePanorama('panorama.png')">Панорама 21</button>
+        <button style="background-image: url(panorama.png);" class="btn" onclick="changePanorama('panorama.png')">Панорама 34</button>
+        <button style="background-image: url(panorama.png);" class="btn" onclick="changePanorama('panorama.png')">Панорама 21</button>
+        <button style="background-image: url(panorama.png);" class="btn" onclick="changePanorama('panorama.png')">Панорама 32</button>
+        <button style="background-image: url(panorama.png);" class="btn" onclick="changePanorama('panorama.png')">Панорама 53</button>
+        <button style="background-image: url(panorama.png);" class="btn" onclick="changePanorama('panorama.png')">Панорама 53</button>
     </div>
 
     <script>
