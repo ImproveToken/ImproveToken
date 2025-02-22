@@ -5,48 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>360° Панорама</title>
     <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
-    <style>
-        .button-container {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-        }
-        .btn {
-            background-size: cover;
-            background-position: center;
-            justify-content: center ;
-            width: 200px;
-            height: 100px;
-            filter: grayscale(1);
-            color: white;
-            border: black;
-            padding: 10px 15px;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 16px;
-            transition: 1s;
-            transform: scale(1);
-        }
-        .btn:hover {
-            filter: grayscale(0);
-            transform: scale(1.2);
-            margin: 0px 10px 0px 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <a-scene>
-        <!-- Панорамное изображение -->
         <a-sky id="panorama" src="panorama.png"></a-sky>
-        
-        <!-- Камера с возможностью управления мышью и мобильной адаптацией -->
         <a-entity camera look-controls="reverseMouseDrag: false; touchEnabled: true; magicWindowTrackingEnabled: true" wasd-controls position="0 1.6 0"></a-entity>
     </a-scene>
     
-    <!-- Кнопки переключения панорам -->
     <div class="button-container">
         <button style="background-image: url(panorama.png);" class="btn" onclick="changePanorama('panorama.png')">Панорама 1</button>
         <button style="background-image: url(panorama.png);" class="btn" onclick="changePanorama('panorama.png')">Панорама 2</button>
@@ -69,9 +35,13 @@
     </div>
 
     <script>
-        function changePanorama(src) {
-            document.getElementById('panorama').setAttribute('src', src);
-        }
+        document.addEventListener('DOMContentLoaded', function () {
+            const buttonContainer = document.querySelector('.button-container');
+
+            buttonContainer.addEventListener('wheel', function (event) {
+                event.stopPropagation(); // Блокируем A-Frame от перехвата события
+            });
+        });
     </script>
 </body>
 </html>
