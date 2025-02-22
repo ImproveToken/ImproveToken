@@ -123,8 +123,8 @@
         function onDocumentTouchMove(event) {
             event.preventDefault();
             if (isUserInteracting && event.touches.length === 1) {
-                lon = (onPointerDownPointerX - event.touches[0].clientX) * 0.1 + onPointerDownLon;
-                lat = (event.touches[0].clientY - onPointerDownPointerY) * 0.1 + onPointerDownLat;
+                lon = (onPointerDownPointerX - event.touches[0].clientX) * 0.5 + onPointerDownLon;
+                lat = (event.touches[0].clientY - onPointerDownPointerY) * 0.5 + onPointerDownLat;
             }
         }
 
