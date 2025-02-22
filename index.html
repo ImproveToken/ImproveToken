@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>360° Панорама</title>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <style>
+        .button-container {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+        .btn {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background: rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <a-scene>
+        <!-- Панорамное изображение -->
+        <a-sky id="panorama" src="panorama.png"></a-sky>
+        
+        <!-- Камера с возможностью управления мышью и мобильной адаптацией -->
+        <a-entity camera look-controls="reverseMouseDrag: false; touchEnabled: true; magicWindowTrackingEnabled: true" wasd-controls position="0 1.6 0"></a-entity>
+    </a-scene>
+    
+    <!-- Кнопки переключения панорам -->
+    <div class="button-container">
+        <button class="btn" onclick="changePanorama('panorama.png')">Панорама 1</button>
+        <button class="btn" onclick="changePanorama('panorama.png')">Панорама 2</button>
+        <button class="btn" onclick="changePanorama('panorama.png')">Панорама 3</button>
+    </div>
+
+    <script>
+        function changePanorama(src) {
+            document.getElementById('panorama').setAttribute('src', src);
+        }
+    </script>
+</body>
+</html>
