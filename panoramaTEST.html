@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Тур с Three.js</title>
+    <link rel="stylesheet" href="stylePANORAMA.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<style>
+
+
+</style>
+<body>
+    <div class="buttons_container">
+        <div class="buttons">
+            <a class="first" style="background-image: url(new-york-city-panorama.jpg);" onclick="changePanorama('new-york-city-panorama.jpg')">Панорама 1</a>
+            <a class="first" style="background-image: url(earth-illuminated-by-sunrise-seen-from-space.jpg);" onclick="changePanorama('earth-illuminated-by-sunrise-seen-from-space.jpg')">Панорама 2</a>
+            <a class="first" style="background-image: url(new-york-city-panorama.jpg);" onclick="changePanorama('new-york-city-panorama.jpg')">Панорама 1</a>
+            <a class="first" style="background-image: url(earth-illuminated-by-sunrise-seen-from-space.jpg);" onclick="changePanorama('earth-illuminated-by-sunrise-seen-from-space.jpg')">Панорама 2</a>
+            <a class="first" style="background-image: url(new-york-city-panorama.jpg);" onclick="changePanorama('new-york-city-panorama.jpg')">Панорама 1</a>
+            <a class="first" style="background-image: url(earth-illuminated-by-sunrise-seen-from-space.jpg);" onclick="changePanorama('earth-illuminated-by-sunrise-seen-from-space.jpg')">Панорама 2</a>
+            <a class="first" style="background-image: url(new-york-city-panorama.jpg);" onclick="changePanorama('new-york-city-panorama.jpg')">Панорама 1</a>
+            <a class="first" style="background-image: url(new-york-city-panorama.jpg);" onclick="changePanorama('new-york-city-panorama.jpg')">Панорама 1</a>
+            <a class="first" style="background-image: url(earth-illuminated-by-sunrise-seen-from-space.jpg);" onclick="changePanorama('earth-illuminated-by-sunrise-seen-from-space.jpg')">Панорама 2</a>
+            <a class="first" style="background-image: url(new-york-city-panorama.jpg);" onclick="changePanorama('new-york-city-panorama.jpg')">Панорама 1</a>
+            <a class="first" style="background-image: url(earth-illuminated-by-sunrise-seen-from-space.jpg);" onclick="changePanorama('earth-illuminated-by-sunrise-seen-from-space.jpg')">Панорама 2</a>
+            <a class="first" style="background-image: url(new-york-city-panorama.jpg);" onclick="changePanorama('new-york-city-panorama.jpg')">Панорама 1</a>
+            <a class="first" style="background-image: url(earth-illuminated-by-sunrise-seen-from-space.jpg);" onclick="changePanorama('earth-illuminated-by-sunrise-seen-from-space.jpg')">Панорама 2</a>
+            <a class="first" style="background-image: url(new-york-city-panorama.jpg);" onclick="changePanorama('new-york-city-panorama.jpg')">Панорама 1</a>
+            <a class="first" style="background-image: url(earth-illuminated-by-sunrise-seen-from-space.jpg);" onclick="changePanorama('earth-illuminated-by-sunrise-seen-from-space.jpg')">Панорама 2</a>
+            <a class="first" style="background-image: url(new-york-city-panorama.jpg);" onclick="changePanorama('new-york-city-panorama.jpg')">Панорама 1</a>
+            <a class="first" style="background-image: url(earth-illuminated-by-sunrise-seen-from-space.jpg);" onclick="changePanorama('earth-illuminated-by-sunrise-seen-from-space.jpg')">Панорама 2</a>
+            <a class="first" style="background-image: url(new-york-city-panorama.jpg);" onclick="changePanorama('new-york-city-panorama.jpg')">Панорама 1</a>
+            <a class="first" style="background-image: url(earth-illuminated-by-sunrise-seen-from-space.jpg);" onclick="changePanorama('earth-illuminated-by-sunrise-seen-from-space.jpg')">Панорама 2</a>
+            <a class="first" style="background-image: url(new-york-city-panorama.jpg);" onclick="changePanorama('new-york-city-panorama.jpg')">Панорама 1</a>
+            <a class="first" style="background-image: url(earth-illuminated-by-sunrise-seen-from-space.jpg);" onclick="changePanorama('earth-illuminated-by-sunrise-seen-from-space.jpg')">Панорама 2</a>
+            <a class="first" style="background-image: url(new-york-city-panorama.jpg);" onclick="changePanorama('new-york-city-panorama.jpg')">Панорама 1</a>
+            <a class="first" style="background-image: url(new-york-city-panorama.jpg);" onclick="changePanorama('new-york-city-panorama.jpg')">Панорама 1</a>
+            <a class="first" style="background-image: url(earth-illuminated-by-sunrise-seen-from-space.jpg);" onclick="changePanorama('earth-illuminated-by-sunrise-seen-from-space.jpg')">Панорама 2</a>
+            <a class="first" style="background-image: url(new-york-city-panorama.jpg);" onclick="changePanorama('new-york-city-panorama.jpg')">Панорама 1</a>
+            <a class="first" style="background-image: url(earth-illuminated-by-sunrise-seen-from-space.jpg);" onclick="changePanorama('earth-illuminated-by-sunrise-seen-from-space.jpg')">Панорама 2</a>
+            <a class="first" style="background-image: url(new-york-city-panorama.jpg);" onclick="changePanorama('new-york-city-panorama.jpg')">Панорама 1</a>
+            <a class="first" style="background-image: url(earth-illuminated-by-sunrise-seen-from-space.jpg);" onclick="changePanorama('earth-illuminated-by-sunrise-seen-from-space.jpg')">Панорама 2</a>
+            <a class="first" style="background-image: url(earth-illuminated-by-sunrise-seen-from-space.jpg);" onclick="changePanorama('earth-illuminated-by-sunrise-seen-from-space.jpg')">Панорама 2</a>
+        </div>
+    </div>
+    <script>
+        let scene, camera, renderer, sphereMaterial;
+        let isUserInteracting = false;
+        let lon = 0, lat = 0, phi = 0, theta = 0;
+        let onPointerDownPointerX, onPointerDownPointerY, onPointerDownLon, onPointerDownLat;
+
+        function init() {
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            renderer = new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+
+            // Загружаем текстуру 360° панорамы
+            const textureLoader = new THREE.TextureLoader();
+            const texture = textureLoader.load('new-york-city-panorama.jpg'); // Замените на свою текстуру
+            
+            // Создаем сферу и накладываем текстуру
+            const sphereGeometry = new THREE.SphereGeometry(500, 60, 40);
+            sphereGeometry.scale(-1, 1, 1);
+            sphereMaterial = new THREE.MeshBasicMaterial({ map: texture });
+            const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+            scene.add(sphere);
+
+            camera.position.set(0, 0, 0.1);
+
+            document.addEventListener('mousedown', onDocumentMouseDown, false);
+            document.addEventListener('mousemove', onDocumentMouseMove, false);
+            document.addEventListener('mouseup', onDocumentMouseUp, false);
+            document.addEventListener('touchstart', onDocumentTouchStart, { passive: false });
+            document.addEventListener('touchmove', onDocumentTouchMove, { passive: false });
+            document.addEventListener('touchend', onDocumentTouchEnd, false);
+
+            animate();
+        }
+
+        function changePanorama(image) {
+            const textureLoader = new THREE.TextureLoader();
+            textureLoader.load(image, function(texture) {
+                sphereMaterial.map = texture;
+                sphereMaterial.needsUpdate = true;
+            });
+        }
+
+        function onDocumentMouseDown(event) {
+            event.preventDefault();
+            isUserInteracting = true;
+            onPointerDownPointerX = event.clientX;
+            onPointerDownPointerY = event.clientY;
+            onPointerDownLon = lon;
+            onPointerDownLat = lat;
+        }
+
+        function onDocumentMouseMove(event) {
+            if (isUserInteracting) {
+                lon = (onPointerDownPointerX - event.clientX) * 0.1 + onPointerDownLon;
+                lat = (event.clientY - onPointerDownPointerY) * 0.1 + onPointerDownLat;
+            }
+        }
+
+        function onDocumentMouseUp() {
+            isUserInteracting = false;
+        }
+
+        function onDocumentTouchStart(event) {
+            event.preventDefault();
+            if (event.touches.length === 1) {
+                isUserInteracting = true;
+                onPointerDownPointerX = event.touches[0].clientX;
+                onPointerDownPointerY = event.touches[0].clientY;
+                onPointerDownLon = lon;
+                onPointerDownLat = lat;
+            }
+        }
+
+        function onDocumentTouchMove(event) {
+            event.preventDefault();
+            if (isUserInteracting && event.touches.length === 1) {
+                lon = (onPointerDownPointerX - event.touches[0].clientX) * 0.1 + onPointerDownLon;
+                lat = (event.touches[0].clientY - onPointerDownPointerY) * 0.1 + onPointerDownLat;
+            }
+        }
+
+        function onDocumentTouchEnd() {
+            isUserInteracting = false;
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            lat = Math.max(-85, Math.min(85, lat));
+            phi = THREE.MathUtils.degToRad(90 - lat);
+            theta = THREE.MathUtils.degToRad(lon);
+            camera.position.x = Math.sin(phi) * Math.cos(theta);
+            camera.position.y = Math.cos(phi);
+            camera.position.z = Math.sin(phi) * Math.sin(theta);
+            camera.lookAt(0, 0, 0);
+            renderer.render(scene, camera);
+        }
+
+        window.onload = init;
+    </script>
+</body>
+</html>
