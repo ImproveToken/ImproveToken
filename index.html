@@ -7,6 +7,56 @@
     <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
+    <style>
+        .button-container {
+        position: absolute;
+        bottom: 20px;
+        left: 94%;
+        transform: translateX(-50%);
+        flex-direction: column; /* Располагаем кнопки в столбик */
+        gap: 10px;
+        max-height: 92%; /* Ограничиваем высоту контейнера */
+        overflow-y: auto; /* Включаем вертикальный скролл */
+        width: 220px;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px;
+        border-radius: 10px;
+    }
+    
+    /* Чтобы стилизовать скролл */
+    .button-container::-webkit-scrollbar {
+        width: 8px;
+    }
+    .button-container::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+    }
+    
+    
+    .btn {
+        background-size: cover;
+        background-position: center;
+        width: 200px;
+        height: 100px;
+        filter: grayscale(1);
+        color: white;
+        stroke: black 10px;
+        border: black;
+        padding: 10px 15px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: 1s;
+        transform: scale(1);
+    }
+    
+    
+    .btn:hover {
+        filter: grayscale(0);
+        transform: scale(1.2);
+        margin: 0px 10px 0px 10px;
+    }
+</style>
 <body>
     <a-scene>
         <a-sky id="panorama" src="panorama.png"></a-sky>
