@@ -5,7 +5,7 @@
 .button-container {
     position: absolute;
     bottom: 20px;
-    left: 12%;
+    left: 8%;
     transform: translateX(-50%);
     flex-direction: column;
     justify-content: center;
