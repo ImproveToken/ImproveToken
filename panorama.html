@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админ-Панель</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .file-list { border: 1px solid #ccc; padding: 10px; width: 300px; }
+        .file-list li { cursor: pointer; padding: 5px; border-bottom: 1px solid #ddd; }
+        textarea { width: 100%; height: 200px; }
+    </style>
+</head>
+<body>
+    <div id="login-form">
+        <h2>Вход в админ-панель</h2>
+        <input type="password" id="password" placeholder="Введите пароль">
+        <button onclick="login()">Войти</button>
+    </div>
+    
+    <div id="admin-panel" style="display: none;">
+        <h1>Админ-Панель</h1>
+        <ul class="file-list" id="file-list"></ul>
+        <h2 id="file-title"></h2>
+        <textarea id="file-content"></textarea>
+        <button onclick="saveFile()">Сохранить</button>
+        <button onclick="downloadFile()">Скачать</button>
+        <h2>Загрузить новый файл</h2>
+        <input type="file" id="file-upload">
+        <button onclick="uploadFile()">Загрузить</button>
+    </div>
+    
+    <script>
+        async function login() {
+            const password = document.getElementById('password').value;
+            const res = await fetch('http://localhost:5000/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ password })
+            });
+            const data = await res.json();
+            if (data.success) {
+                document.getElementById('login-form').style.display = 'none';
+                document.getElementById('admin-panel').style.display = 'block';
+                loadFiles('panorama.png');
+            } else {
+                alert('Неверный пароль');
+            }
+        }
+    </script>
+</body>
+</html>

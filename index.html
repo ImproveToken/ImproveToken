@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>360° Панорама</title>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a-scene>
+        <a-sky id="panorama" src="1.jpg"></a-sky>
+        <a-entity camera look-controls="reverseMouseDrag: false; touchEnabled: true; magicWindowTrackingEnabled: true" wasd-controls position="0 1.6 0"></a-entity>
+    </a-scene>
+        <div class="button-container">
+            <button style="background-image: url(1.jpg);" class="btn" onclick="changePanorama('1.jpg')">Главный вход с улицы</button>
+            <button style="background-image: url(2.jpg);" class="btn" onclick="changePanorama('2.jpg')">Главный вход</button>
+            <button style="background-image: url(3.jpg);" class="btn" onclick="changePanorama('3.jpg')">Коридор главного входа</button>
+            <button style="background-image: url(4.jpg);" class="btn" onclick="changePanorama('4.jpg')">1 Этаж напротив главного входа</button>
+            <button style="background-image: url(5.jpg);" class="btn" onclick="changePanorama('5.jpg')">Лаборатория по выращиванию микрозелени итог</button>
+            <button style="background-image: url(6.jpg);" class="btn" onclick="changePanorama('6.jpg')">106 Админ</button>
+            <button style="background-image: url(7.jpg);" class="btn" onclick="changePanorama('7.jpg')">108 Админ</button>
+            <button style="background-image: url(8.jpg);" class="btn" onclick="changePanorama('8.jpg')">Мастерская флористики</button>
+            <button style="background-image: url(9.jpg);" class="btn" onclick="changePanorama('9.jpg')">103 Кабинет</button>
+            <button style="background-image: url(10.jpg);" class="btn" onclick="changePanorama('10.jpg')">106 Кабинет</button>
+            <button style="background-image: url(11.jpg);" class="btn" onclick="changePanorama('11.jpg')">Столовая</button>
+            <button style="background-image: url(12.jpg);" class="btn" onclick="changePanorama('12.jpg')">Спорт зал</button>
+            <button style="background-image: url(13.jpg);" class="btn" onclick="changePanorama('13.jpg')">Актовый зал</button>
+            <button style="background-image: url(14.jpg);" class="btn" onclick="changePanorama('14.jpg')">Бассейн</button>
+            <button style="background-image: url(15.jpg);" class="btn" onclick="changePanorama('15.jpg')">Коворкинг</button>
+            <button style="background-image: url(16.jpg);" class="btn" onclick="changePanorama('16.jpg')">210 Админ</button>
+            <button style="background-image: url(17.jpg);" class="btn" onclick="changePanorama('17.jpg')">206 Админ</button>
+            <button style="background-image: url(18.jpg);" class="btn" onclick="changePanorama('18.jpg')">Военный кабинет</button>
+            <button style="background-image: url(19.jpg);" class="btn" onclick="changePanorama('19.jpg')">Коридор 2 этаж админ</button>
+            <button style="background-image: url(21.jpg);" class="btn" onclick="changePanorama('20.jpg')">202 1ч. Админ</button>
+            <button style="background-image: url(22.jpg);" class="btn" onclick="changePanorama('21.jpg')">202 2ч. Админ</button>
+            <button style="background-image: url(23.jpg);" class="btn" onclick="changePanorama('22.jpg')">Читальный зал</button>
+            <button style="background-image: url(20.jpg);" class="btn" onclick="changePanorama('23.jpg')">Теплица</button>
+
+        </div>
+    <script src="script.js"></script>
+</body>
+</html>
